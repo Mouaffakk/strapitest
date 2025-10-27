@@ -1,0 +1,19 @@
+name: Webhook Test
+
+on:
+  repository_dispatch:
+    types: [webhook-test]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello World
+        run: echo "Hello World"
+      
+      - name: Display Event Information
+        run: |
+          echo "Event Type: ${{ github.event.action }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Triggered by: ${{ github.actor }}"
