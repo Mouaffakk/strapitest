@@ -2,7 +2,7 @@ name: Webhook Test
 
 on:
   repository_dispatch:
-    types: [webhook-test]
+    types: [strapi]
   workflow_dispatch:
 
 jobs:
